@@ -62,7 +62,12 @@ Designed and written by Tony Huang.
 2. Open CLI at downloaded file directory
 3. Type "npm init --y" to initialize Node.js
 4. Type "npm install" to install all necessary packages
-5. Type "node server" to initialize program
+5. Enter 'mysql' CLI using own credentials
+6. Type "source db/db.sql" to initialize database
+7. Type "source db/schema.sql" to initialize tables
+7. Type "source db/seeds.sql" to input pre-populated values
+8. Quit out of mysql instance
+9. Type "node server" to initialize program
 
 ## Final Result
 Main CLI page
