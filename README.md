@@ -2,11 +2,11 @@
 The goal of this challenge is to create a CLI application where an employer can view employee databases and update/create employees, roles and departments to be added to the company.
 
 ## Table of Contents
-[Criteria](#criteria)
-[Tools Used](#tools-used)
-[Contributions](#contributions)
-[How to Use](#how-to-run)
-[Final Results](#final-result)
+* [Criteria](#criteria)
+* [Tools Used](#tools-used)
+* [Contributions](#contributions)
+* [How to Use](#how-to-run)
+* [Final Results](#final-result)
 
 ## Criteria
 * Command Line Interface (CLI) application that accepts user input
