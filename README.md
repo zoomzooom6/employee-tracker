@@ -62,7 +62,7 @@ Designed and written by Tony Huang.
 2. Open CLI at downloaded file directory
 3. Type "npm init --y" to initialize Node.js
 4. Type "npm install" to install all necessary packages
-5. Type "npm start" to initialize program
+5. Type "node server" to initialize program
 
 ## Final Result
 Main CLI page
