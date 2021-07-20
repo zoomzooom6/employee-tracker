@@ -67,7 +67,7 @@ Designed and written by Tony Huang.
 7. Type "source db/schema.sql" to initialize tables
 7. Type "source db/seeds.sql" to input pre-populated values
 8. Quit out of mysql instance
-9. Type "node server" to initialize program
+9. Type "npm start" to initialize program
 
 ## Final Result
 Main CLI page
