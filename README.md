@@ -5,7 +5,7 @@ The goal of this challenge is to create a CLI application where an employer can 
 * [Criteria](#criteria)
 * [Tools Used](#tools-used)
 * [Contributions](#contributions)
-* [How to Use](#how-to-run)
+* [How to Run](#how-to-run)
 * [Final Results](#final-result)
 
 ## Criteria
@@ -60,8 +60,9 @@ Designed and written by Tony Huang.
 ## How to run
 1. Download entire package from repository
 2. Open CLI at downloaded file directory
-3. Type "npm install" to install all necessary packages
-4. Type "npm start" to initialize program
+3. Type "npm init --y" to initialize Node.js
+4. Type "npm install" to install all necessary packages
+5. Type "npm start" to initialize program
 
 ## Final Result
 Main CLI page

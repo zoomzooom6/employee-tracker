@@ -1,0 +1,27 @@
+{
+  "name": "Week12",
+  "version": "1.0.0",
+  "description": "The goal of this challenge is to create a CLI application where an employer can view employee databases and update/create employees, roles and departments to be added to the company.",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoomzooom6/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zoomzooom6/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/zoomzooom6/employee-tracker#readme"
+}
