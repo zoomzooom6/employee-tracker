@@ -38,7 +38,11 @@ app.get('/api/departments', (req, res) => {
 
 //View all roles
 app.get('/api/roles', (req, res) => {
-    const sql = `SELECT * FROM roles`;
+    const sql = `SELECT r.id, r.title, r.salary,  
+                 d.dept_name AS department 
+                 FROM roles r
+                 LEFT JOIN department d 
+                 ON r.department_id = d.id`;
     db.query(sql, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -53,7 +57,18 @@ app.get('/api/roles', (req, res) => {
 
 //View all employees
 app.get('/api/employees', (req, res) => {
-    const sql = `SELECT * FROM employees`;
+    const sql = `SELECT e.id, e.first_name, e.last_name,
+                 r.title AS job_title,
+                 d.dept_name AS department,
+                 r.salary AS salary,
+                 m.first_name AS manager
+                 FROM employees e
+                 LEFT JOIN roles r
+                 ON e.role_id = r.id
+                 LEFT JOIN department d
+                 ON r.department_id = d.id
+                 LEFT JOIN employees m
+                 ON e.manager_id = m.id`;
     db.query(sql, (err, rows) => {
         if (err) {
             res.status(500).json({ error: err.message });
@@ -68,20 +83,28 @@ app.get('/api/employees', (req, res) => {
 
 //Update employee role
 app.put('/api/employees/:id', (req, res) => {
-    const sql = `UPDATE `
-    const params = [req.params.id];
+    const sql = `UPDATE employees
+                 SET role_id = ?
+                 WHERE employees.id = ?`
+    const params = [req.body.role_id, req.params.id];
 
     db.query(sql, params, (err, result) => {
         if (err) {
-            res.status(500).json({ error: err.message });
+            res.status(400).json({ error: err.message });
             return;
+        } else if (!result.affectedRows) {
+            res.json({
+                message: 'Employee not found'
+            });
+        } else {
+            res.json({
+                message: 'sucess',
+                data: req.body,
+                changes: result.affectedRows
+            });
         }
-        res.json({
-            message: 'sucess',
-            data: result
-        })
-    })
-})
+    });
+});
 
 //Create a department
 app.post('/api/department', ({ body }, res) => {

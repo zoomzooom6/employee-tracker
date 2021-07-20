@@ -10,8 +10,8 @@ VALUES
 
 INSERT INTO roles(title, salary, department_id)
 VALUES
-    ('Prime Minister', 400000, 1),
-    ('Clown', 50000, 0),
+    ('Prime Minister', 400000, 2),
+    ('Clown', 50000, 1),
     ('Delivery Boy', 25000, 3),
     ('Janitor', 75000, 4),
     ('Singer', 30000, 6),
@@ -23,7 +23,7 @@ VALUES
     ('Justin', 'Trudeau', 2, null),
     ('Stephen', 'Harper', 4, 1),
     ('Paul', 'Martin', 5, 2),
-    ('Jean', 'Chretian', 3, 1),
+    ('Jean', 'Chretian', 7, 1),
     ('Kim', 'Campbell', 3, 2),
     ('Brian', 'Mulroney', 4, 1),
     ('John', 'Turner', 1, 2),
