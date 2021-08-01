@@ -67,17 +67,24 @@ Designed and written by Tony Huang.
 7. Type "source db/schema.sql" to initialize tables
 7. Type "source db/seeds.sql" to input pre-populated values
 8. Quit out of mysql instance
-9. Type "npm start" to initialize program
+9. Create a .env file containing the following variables
+    * DB_NAME: 'company'
+    * DB_USER: 'enter-user-account-to-access-mysql'
+    * DB_PW: 'enter-password-to-log-into-mysql'
+10. Type "npm start" to initialize program
 
 ## Final Result
 Main CLI page
-<img src='' alt=''/>
+<img src='/public/images/MainCLIPage.png' alt='Main CLI Interface'/>
 
 Table of departments
-<img src='' alt=''/>
+<img src='/public/images/Departments.png' alt='Department Table'/>
 
 Table of roles
-<img src='' alt=''/>
+<img src='/public/images/Roles.png' alt='Roles Table'/>
+
+Table of employees
+<img src='/public/images/Employees.png' alt='Employees Table'/>
 
 Live video link
-<a href=''>Click here</a>
+<a href='https://youtu.be/_f5AW71pI7w'>Click here</a>

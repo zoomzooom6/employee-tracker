@@ -5,7 +5,6 @@ console.log(`
 ==========================================================
         WELCOME TO THE EMPLOYEE MANAGEMENT SYSTEM
 ==========================================================`);
-console.log('Printing first query.....');
 
 const empPrompt = () => {
     inquirer.prompt([
@@ -120,57 +119,57 @@ async function userPrompts() {
     ])
         .then( (answer) => {
             //console.log(answer);
-            // if(answer.choice === 'View All Employees') {
-            //     console.log(queries.getAllEmp());
-            // }
-            // if(answer.choice === 'View All Roles') {
-            //     console.log(queries.getAllRole());
-            // }
-            // if(answer.choice === 'View All Departments') {
-            //     console.log(queries.getAllDept());
-            // }
-            // if(answer.choice === 'Create a Department') {
-            //     deptPrompt();
-            //     return;
-            // }
-            // if(answer.choice === 'Create a Role') {
-            //     rolePrompt();
-            //     return;
-            // }
-            // if(answer.choice === 'Add an Employee') {
-            //     empPrompt();
-            //     return;
-            // }
-            // if(answer.choice === 'Update Employee Role') {
-            //     updPrompt();
-            //     return userPrompts();
-            // }
+            if(answer.choice === 'View All Employees') {
+                console.log(queries.getAllEmp());
+            }
+            if(answer.choice === 'View All Roles') {
+                console.log(queries.getAllRole());
+            }
+            if(answer.choice === 'View All Departments') {
+                console.log(queries.getAllDept());
+            }
+            if(answer.choice === 'Create a Department') {
+                deptPrompt();
+                return;
+            }
+            if(answer.choice === 'Create a Role') {
+                rolePrompt();
+                return;
+            }
+            if(answer.choice === 'Add an Employee') {
+                empPrompt();
+                return;
+            }
+            if(answer.choice === 'Update Employee Role') {
+                updPrompt();
+                return userPrompts();
+            }
             // if(answer.choice !== 'Exit') {
             //     return userPrompts();
             // }
-            switch(answer.choice) {
-                case 'View All Employees':
-                    console.log(queries.getAllEmp());
-                    break;
-                case 'View All Roles':
-                    console.log(queries.getAllRole());
-                    break;
-                case 'View All Departments':
-                    console.log(queries.getAllDept());
-                    break;
-                case 'Create a Department':
-                    deptPrompt();
-                    break;
-                case 'Create a Role':
-                    rolePrompt();
-                    break;
-                case 'Add an Employee':
-                    empPrompt();
-                    break;
-                case 'Update Employee Role':
-                    updPrompt();
-                    break;
-            }
+            // switch(answer.choice) {
+            //     case 'View All Employees':
+            //         console.log(queries.getAllEmp());
+            //         break;
+            //     case 'View All Roles':
+            //         console.log(queries.getAllRole());
+            //         break;
+            //     case 'View All Departments':
+            //         console.log(queries.getAllDept());
+            //         break;
+            //     case 'Create a Department':
+            //         deptPrompt();
+            //         break;
+            //     case 'Create a Role':
+            //         rolePrompt();
+            //         break;
+            //     case 'Add an Employee':
+            //         empPrompt();
+            //         break;
+            //     case 'Update Employee Role':
+            //         updPrompt();
+            //         break;
+            // }
             if(answer.choice !== 'Exit') {
                 return userPrompts();
             }
