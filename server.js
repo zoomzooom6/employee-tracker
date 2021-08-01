@@ -1,26 +1,34 @@
-const express = require('express');
-const db = require('./db/connection');
-const apiRoutes = require('./routes/apiRoutes');
+const getUsers = require('./models/queries');
+const inquirer = require('inquirer');
 
-const PORT = process.env.PORT || 3001;
-const app = express();
+console.log(`
+==========================================================
+        WELCOME TO THE EMPLOYEE MANAGEMENT SYSTEM
+==========================================================`);
+console.log('Printing first query.....');
 
-//Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+const userPrompts = () => {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'choice',
+            message: 'What do you want to do?',
+            choices: ['View All Employees', 'View All Roles', 'View All Departments', 'Create a Department', 'Create a Role', 'Add an Employee', 'Update Employee Role', 'Exit']
+        },
+        {
+            type: 'number',
+            name: 'id',
+            message: 'What is the Employee ID number?'
+        }
+    ])
+        .then(answers => {
+            console.log(answers);
+            getUsers(answers.id);
+            if(answers.choice !== 'Exit') {
+                return userPrompts();
+            }
+        })
+};
 
-app.use('/api', apiRoutes);
 
-//Default response for any "Not Found" requests
-app.use((req, res) => {
-    res.status(404).end();
-});
-
-// Start server after DB connection
-db.connect(err => {
-    if (err) throw err;
-    console.log('Database connected.');
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-});
+userPrompts();
